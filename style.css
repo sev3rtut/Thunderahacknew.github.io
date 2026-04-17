@@ -1,65 +1,180 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-
-body {
-    background: radial-gradient(circle at center, #1a0b2e 0%, #0a0514 100%);
-    background-image: url('https://w.wallhaven.cc/full/vq/wallhaven-vq6368.jpg'); /* Похожий фон */
-    background-size: cover;
-    color: white;
-    min-height: 100vh;
+/* Общие сбросы и шрифт */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+body {
+    /* ТЕМНЫЙ ФОН И ТЕКСТУРА КАРБОНА */
+    background-color: #0d1117; /* Базовый темный */
+    background-image: url('carbon.jpg'); /* !!! Убедись, что файл carbon.jpg лежит в папке !!! */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #e6edf3;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Шапка сайта (Header) */
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 80px;
+    padding: 25px 80px;
     align-items: center;
+    background: rgba(13, 17, 23, 0.9); /* Полупрозрачный фон шапки */
+    border-bottom: 1px solid #21262d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.logo { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 22px; color: #ff2df0; }
-.logo-icon { border: 2px solid #ff2df0; border-radius: 50%; padding: 5px 12px; }
+/* СТИЛИЗАЦИЯ НЕОНОВОГО ЗАГОЛОВКА */
+.logo-text {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: none; /* Убираем капс, как на скрине */
+    /* ГРАДИЕНТНЫЙ ТЕКСТ (Розовый -> Голубой) */
+    background: linear-gradient(90deg, #ff6ae5 0%, #64fff3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* НЕОНОВОЕ СВЕЧЕНИЕ (Тень текста) */
+    text-shadow: 0 0 15px rgba(255, 106, 229, 0.6), 0 0 30px rgba(100, 255, 243, 0.4);
+    letter-spacing: -1px;
+}
 
-nav a { color: #8a7fa1; text-decoration: none; margin-left: 25px; font-size: 14px; transition: 0.3s; }
-nav a:hover { color: white; }
-
-.container { padding: 50px 80px; }
-
-.hero-section { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; }
-
-.hero-card {
-    background: rgba(15, 10, 25, 0.8);
-    border: 1px solid #3d1a5a;
-    border-radius: 15px;
-    padding: 40px;
+/* Навигация */
+nav {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: 30px;
 }
 
-.hero-card h2 { font-size: 28px; margin-bottom: 20px; color: #9c4dff; }
-.hero-card p { line-height: 1.6; color: #ccc; margin-bottom: 30px; }
+nav a {
+    color: #8b949e; /* Тусклый цвет, как на скрине */
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
 
-.buttons { display: flex; gap: 15px; }
-.btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; transition: 0.3s; }
-.btn-download { background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); box-shadow: 0 0 15px rgba(106, 17, 203, 0.5); }
-.btn-updates { background: rgba(255,255,255,0.1); border: 1px solid #444; }
-.btn:hover { transform: translateY(-3px); opacity: 0.9; }
+nav a:hover {
+    color: #e6edf3; /* Осветление при наведении */
+}
 
+/* Контейнер основного контента */
+.container {
+    padding: 60px 80px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Макет: Крупная карточка слева, сетка справа */
+.main-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Общие стили для ВСЕХ карточек (Новые темные) */
+.hero-card, .feature-card {
+    background: rgba(22, 27, 34, 0.6); /* Очень темный, полупрозрачный */
+    border: 1px solid #30363d; /* Тонкая серая обводка по умолчанию */
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект наведения (Ховер) для всех карточек - ФИОЛЕТОВАЯ ОБВОДКА */
+.hero-card:hover, .feature-card:hover {
+    border-color: #8957e5; /* Фиолетовый border при наведении */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(137, 87, 229, 0.15); /* Мягкое фиолетовое свечение вниз */
+}
+
+/* Стиль большой карточки слева */
+.hero-card {
+    flex: 1; /* Занимает доступное место */
+    padding: 50px;
+    min-width: 400px;
+}
+
+.hero-card h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #8957e5; /* Фиолетовый заголовок внутри */
+    font-weight: 700;
+}
+
+.hero-card p {
+    line-height: 1.8;
+    color: #c9d1d9;
+    font-size: 15px;
+}
+
+/* Сетка карточек справа */
 .features-grid {
+    flex: 2; /* Занимает в 2 раза больше места, чем левая */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
     gap: 20px;
 }
 
+/* Стиль маленьких карточек */
 .feature-card {
-    background: rgba(15, 10, 25, 0.7);
-    border: 1px solid #3d1a5a;
     padding: 30px;
-    border-radius: 10px;
     text-align: center;
-    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.feature-card:hover { border-color: #ff2df0; transform: scale(1.02); }
-.icon { font-size: 30px; color: #a14dff; margin-bottom: 15px; }
-.feature-card h3 { margin-bottom: 10px; font-size: 18px; }
-.feature-card p { font-size: 13px; color: #aaa; }
+/* Иконки внутри карточек - ЯРКО-ФИОЛЕТОВЫЕ */
+.icon-purple {
+    font-size: 36px;
+    color: #bc8cff; /* Светло-фиолетовый */
+    margin-bottom: 20px;
+    /* Эффект свечения для иконок */
+    filter: drop-shadow(0 0 8px rgba(188, 140, 255, 0.5));
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #e6edf3;
+}
+
+.feature-card p {
+    font-size: 13px;
+    color: #8b949e;
+    line-height: 1.6;
+}
+
+/* МЕТАЛЛИЧЕСКИЙ ЗНАЧОК HIGH VOLTAGE */
+.high-voltage-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(145deg, #2d333b, #1c2128); /* Градиент "под металл" */
+    border: 2px solid #444; /* Имитация заклепок/рамки */
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: #8b949e;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5), inset 1px 1px 2px rgba(255,255,255,0.1);
+    letter-spacing: 1px;
+    z-index: 50;
+}
+
+.high-voltage-badge i {
+    color: #444; /* Значок молнии тусклый */
+    font-size: 16px;
+}
