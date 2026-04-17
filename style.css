@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    background-color: #0a0a0c;
-    /* Фон как на втором фото (карбон/металл) */
+    background-color: #0d1117;
+    /* Текстура карбона на фоне */
     background-image: url('https://w.wallhaven.cc/full/vq/wallhaven-vq6368.jpg'); 
     background-size: cover;
     background-attachment: fixed;
@@ -17,8 +17,6 @@ body {
 
 header {
     padding: 30px 80px;
-    background: rgba(0, 0, 0, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logo-text {
@@ -28,102 +26,107 @@ header {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 15px rgba(255, 106, 229, 0.4);
+    text-shadow: 0 0 20px rgba(255, 106, 229, 0.4);
 }
 
 .container {
-    padding: 60px 80px;
+    padding: 40px 80px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .main-layout {
     display: flex;
-    gap: 30px;
-    align-items: flex-start;
+    gap: 20px;
+    align-items: stretch;
 }
 
+/* Описание слева */
 .hero-card {
-    flex: 0 0 400px;
-    background: rgba(17, 18, 23, 0.85);
+    flex: 1;
+    background: rgba(17, 19, 25, 0.9);
     border: 1px solid #2a2d35;
-    border-radius: 12px;
+    border-radius: 15px;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-card h2 {
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #a855f7;
 }
 
 .hero-card p {
     color: #94a3b8;
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
-/* СТИЛЬ КНОПКИ КАК НА ФОТО */
+/* Кнопка "Скачать" из image_2e59c1.png */
 .btn-download {
     display: inline-flex;
     align-items: center;
     gap: 15px;
-    padding: 12px 35px;
-    /* Градиент от синего к розовому */
+    padding: 14px 40px;
     background: linear-gradient(90deg, #2563eb 0%, #9333ea 50%, #db2777 100%);
     color: white;
     text-decoration: none;
     font-weight: 700;
     font-size: 18px;
     border-radius: 8px;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    width: fit-content;
 }
 
 .btn-download:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
-    filter: brightness(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(147, 51, 234, 0.5);
 }
 
-.btn-download i {
-    font-size: 22px;
-}
-
-/* СЕТКА ПРАВАЯ */
+/* СЕТКА С ВЕРТИКАЛЬНЫМИ КАРТОЧКАМИ (как на скриншоте 2ebf5b.png) */
 .features-grid {
-    flex: 1;
+    flex: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
 .feature-card {
-    background: rgba(17, 18, 23, 0.7);
+    background: rgba(17, 19, 25, 0.9);
     border: 1px solid #2a2d35;
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
+    border-radius: 15px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     transition: 0.3s;
+    min-height: 350px; /* Делаем их высокими */
 }
 
 .feature-card:hover {
     border-color: #a855f7;
-    background: rgba(22, 23, 30, 0.9);
+    background: rgba(22, 24, 32, 1);
 }
 
 .icon-purple {
-    font-size: 30px;
+    font-size: 40px;
     color: #a855f7;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
 }
 
 .feature-card h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .feature-card p {
-    font-size: 12px;
+    font-size: 14px;
     color: #64748b;
+    text-align: center;
 }
