@@ -1,0 +1,65 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body {
+    background: radial-gradient(circle at center, #1a0b2e 0%, #0a0514 100%);
+    background-image: url('https://w.wallhaven.cc/full/vq/wallhaven-vq6368.jpg'); /* Похожий фон */
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 80px;
+    align-items: center;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 22px; color: #ff2df0; }
+.logo-icon { border: 2px solid #ff2df0; border-radius: 50%; padding: 5px 12px; }
+
+nav a { color: #8a7fa1; text-decoration: none; margin-left: 25px; font-size: 14px; transition: 0.3s; }
+nav a:hover { color: white; }
+
+.container { padding: 50px 80px; }
+
+.hero-section { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; }
+
+.hero-card {
+    background: rgba(15, 10, 25, 0.8);
+    border: 1px solid #3d1a5a;
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-card h2 { font-size: 28px; margin-bottom: 20px; color: #9c4dff; }
+.hero-card p { line-height: 1.6; color: #ccc; margin-bottom: 30px; }
+
+.buttons { display: flex; gap: 15px; }
+.btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; transition: 0.3s; }
+.btn-download { background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); box-shadow: 0 0 15px rgba(106, 17, 203, 0.5); }
+.btn-updates { background: rgba(255,255,255,0.1); border: 1px solid #444; }
+.btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: rgba(15, 10, 25, 0.7);
+    border: 1px solid #3d1a5a;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-card:hover { border-color: #ff2df0; transform: scale(1.02); }
+.icon { font-size: 30px; color: #a14dff; margin-bottom: 15px; }
+.feature-card h3 { margin-bottom: 10px; font-size: 18px; }
+.feature-card p { font-size: 13px; color: #aaa; }
