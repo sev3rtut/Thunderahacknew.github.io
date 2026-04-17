@@ -2,35 +2,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
 body {
-    background-color: #0d1117;
-    /* Убедись, что картинка фона называется carbon.jpg или замени ссылку ниже */
+    background-color: #0a0a0c;
+    /* Фон как на втором фото (карбон/металл) */
     background-image: url('https://w.wallhaven.cc/full/vq/wallhaven-vq6368.jpg'); 
     background-size: cover;
     background-attachment: fixed;
-    color: #e6edf3;
+    color: white;
     min-height: 100vh;
 }
 
 header {
-    display: flex;
-    justify-content: flex-start;
     padding: 30px 80px;
-    background: rgba(13, 17, 23, 0.7);
-    border-bottom: 1px solid rgba(137, 87, 229, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logo-text {
-    font-size: 35px;
+    font-size: 32px;
     font-weight: 800;
     background: linear-gradient(90deg, #ff6ae5 0%, #64fff3 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 20px rgba(255, 106, 229, 0.5);
+    text-shadow: 0 0 15px rgba(255, 106, 229, 0.4);
 }
 
 .container {
@@ -41,85 +39,91 @@ header {
 
 .main-layout {
     display: flex;
-    gap: 40px;
+    gap: 30px;
+    align-items: flex-start;
 }
 
 .hero-card {
-    flex: 1;
-    background: rgba(22, 27, 34, 0.8);
-    border: 1px solid #30363d;
-    border-radius: 15px;
-    padding: 45px;
-    height: fit-content;
+    flex: 0 0 400px;
+    background: rgba(17, 18, 23, 0.85);
+    border: 1px solid #2a2d35;
+    border-radius: 12px;
+    padding: 40px;
 }
 
 .hero-card h2 {
-    font-size: 30px;
-    color: #8957e5;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #a855f7;
 }
 
 .hero-card p {
-    color: #8b949e;
+    color: #94a3b8;
     line-height: 1.6;
     margin-bottom: 30px;
 }
 
-/* КНОПКА СКАЧАТЬ */
+/* СТИЛЬ КНОПКИ КАК НА ФОТО */
 .btn-download {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px 45px;
-    background: linear-gradient(90deg, #8957e5 0%, #ff6ae5 100%);
+    gap: 15px;
+    padding: 12px 35px;
+    /* Градиент от синего к розовому */
+    background: linear-gradient(90deg, #2563eb 0%, #9333ea 50%, #db2777 100%);
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
+    font-weight: 700;
     font-size: 18px;
-    transition: 0.3s;
-    box-shadow: 0 0 20px rgba(137, 87, 229, 0.4);
+    border-radius: 8px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-download:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 106, 229, 0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn-download i {
+    font-size: 22px;
 }
 
 /* СЕТКА ПРАВАЯ */
 .features-grid {
-    flex: 2;
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 15px;
 }
 
 .feature-card {
-    background: rgba(22, 27, 34, 0.7);
-    border: 1px solid #30363d;
-    padding: 30px;
-    border-radius: 12px;
+    background: rgba(17, 18, 23, 0.7);
+    border: 1px solid #2a2d35;
+    padding: 25px;
+    border-radius: 10px;
     text-align: center;
     transition: 0.3s;
 }
 
 .feature-card:hover {
-    border-color: #8957e5;
-    transform: translateY(-5px);
+    border-color: #a855f7;
+    background: rgba(22, 23, 30, 0.9);
 }
 
 .icon-purple {
-    font-size: 32px;
-    color: #bc8cff;
+    font-size: 30px;
+    color: #a855f7;
     margin-bottom: 15px;
 }
 
 .feature-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
 .feature-card p {
-    font-size: 13px;
-    color: #8b949e;
+    font-size: 12px;
+    color: #64748b;
 }
